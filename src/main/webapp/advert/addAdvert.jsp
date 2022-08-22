@@ -332,9 +332,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								<div class="row">
 									<div class="col-12">
 										<div class="form-group">
-											<label>賣家帳號</label> <input id="sellrtaccount" type="TEXT"
-												class="form-control" name="companyaccount" size="45"
-												value="<%=(advertvo == null) ? "" : advertvo.getCompanyaccount()%>" />
 											<label>商品編號</label> <input id="itemnumber" type="TEXT"
 												class="form-control" name="itemserialnumber" size="45"
 												value="<%=(advertvo == null) ? "" : advertvo.getItemserialnumber()%>" />
@@ -443,12 +440,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
    
     <script>
-        const sellrtaccount = document.querySelector('#sellrtaccount');
         const itemnumber = document.querySelector('#itemnumber');
         const description = document.querySelector('#description');
         document.querySelector('#addAd').addEventListener('click', () => {
          
-         if (sellrtaccount.value.trim() == "" || itemnumber.value.trim() == "" || description.value.trim() == "") {
+         if (itemnumber.value.trim() == "" || description.value.trim() == "") {
 
           alert(`新增廣告失敗，請再檢查`);
          } else {

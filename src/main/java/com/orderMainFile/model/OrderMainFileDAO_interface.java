@@ -12,7 +12,7 @@ public interface OrderMainFileDAO_interface {
 		public OrderMainFileVO findByOrderPK(Integer orderserialnumber);
 		public List<OrderDetailVO> findByOrderDetail(Integer orderserialnumber);
 		
-		//get賣場名稱、優惠券名稱、會員帳號、會員帳號
+		// get賣場名稱、優惠券名稱、會員帳號、會員帳號
 		public List<OrderMainFileVO> getAll();
 		
 		// Mail發送

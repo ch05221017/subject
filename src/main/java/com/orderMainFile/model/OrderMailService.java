@@ -34,8 +34,8 @@ public class OrderMailService {
 	private final static String AUTH = "true";
 	private final static String PORT = "587";
 	private final static String STARTTLE_ENABLE = "true";
-	private final static String SENDER = "xxx@gmail.com";	// 暫鎖
-	private final static String PASSWORD = "vscbljzxyfpsmawo";
+	private final static String SENDER = "xxx";	// 暫鎖
+	private final static String PASSWORD = "xxx";	// 暫鎖
 
 //  設定傳送郵件:至收信人的Email信箱,Email主旨,Email內容
 	public void sendMail(String recipients, String mailSubject, String mailBody) {
@@ -67,7 +67,7 @@ public class OrderMailService {
 			message.setFrom(new InternetAddress(SENDER));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipients));
 //			message.addRecipients(Message.RecipientType.CC, InternetAddress.parse(recipientCcs));
-//          https://javaee.github.io/javamail/docs/api/javax/mail/internet/MimeUtility.html#encodeText-java.lang.String-java.lang.String-java.lang.String- (第三個參數參考API文件)
+
 			message.setSubject(MimeUtility.encodeText(mailSubject, StandardCharsets.UTF_8.toString(), "B"));
 
 //			first part (text)

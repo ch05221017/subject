@@ -14,7 +14,6 @@ public class OrderMainFileService {
 		dao = new OrderMainFileDAO();
 	}
 	
-	// TODO 應該被移到context scope才對
 	public Map<String, String> test() {
 		Map<String, String> map = new HashMap<>();
 		map.put("1", "已完成");

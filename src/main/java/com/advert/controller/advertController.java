@@ -108,7 +108,7 @@ public class advertController extends HttpServlet{
 				try {
 					itemserialnumber = Integer.valueOf(req.getParameter("itemserialnumber"));
 				} catch (NumberFormatException e) {
-					itemserialnumber = null;
+					itemserialnumber = 0;
 					errorMsgs.add("商品編號請勿空白");
 				}
 				
@@ -159,7 +159,7 @@ public class advertController extends HttpServlet{
 					try {
 						itemserialnumber = Integer.valueOf(req.getParameter("itemserialnumber"));
 					} catch (NumberFormatException e) {
-						itemserialnumber = null;
+						itemserialnumber = 0;
 						errorMsgs.add("商品編號請勿空白");
 					}
 

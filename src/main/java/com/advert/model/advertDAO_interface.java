@@ -15,8 +15,6 @@ public interface advertDAO_interface {
 	public void delete(Integer advertserialnumber);
 
 	public advertVO findByItemPK(Integer itemserialnumber);
-	
-//	public advertVO findByItemPK(Integer itemserialnumber);
 
 //	List<advertVO> getAdminaccount();
 

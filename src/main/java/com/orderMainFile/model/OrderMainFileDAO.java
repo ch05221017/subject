@@ -47,15 +47,7 @@ public class OrderMainFileDAO implements OrderMainFileDAO_interface{
 		+ "WHERE d.order_serial_number";
 	
 	// 訂單流水編號join訂單明細(方法2)
-	// private static final String GET_OD_ByOSN_STMT = "SELECT order_serial_number,item_serial_number,order_detail_price,order_detail_quantity,refund_reason,order_detail_status FROM order_detail where order_serial_number = ? order by order_detail_serial_number";
-	
-	//join賣場名稱、優惠券名稱
-//	private static final String GET_Companyname_Couponname = 
-//			"Select * from (SELECT o.order_serial_number,o.member_serial_number,o.seller_serial_number,o.order_status_number,o.coupon_serial_number,o.seller_evaluation_star,o.member_evaluation_star,o.seller_evaluation_description,o.member_evaluation_description,o.order_amount,o.order_date,s.company_name\r\n"
-//			+ "from order_main_file o \r\n"
-//			+ "join seller s on o.seller_serial_number = s.seller_serial_number\r\n"
-//			+ "WHERE o.seller_serial_number)\r\n"
-//			+ "ad JOIN coupon c ON ad.coupon_serial_number = c.coupon_serial_number";
+	// private static final String GET_OD_ByOSN_STMT = "SELECT order_serial_number,item_serial_number,order_detail_price,order_detail_quantity,refund_reason,order_detail_status FROM order_detail where order_serial_number = ? order by order_detail_serial_number";	
 	
 	//join賣場名稱、優惠券名稱、會員帳號、會員帳號
 	private static final String GET_ALL_STMT = 
@@ -423,95 +415,95 @@ public class OrderMainFileDAO implements OrderMainFileDAO_interface{
 	}
 	
 	// 同時新增訂單主檔及訂單明細
-		@Override
-		public void insertWithOrderDetail(OrderMainFileVO orderMainFileVO , List<OrderDetailVO> list) {
+	@Override
+	public void insertWithOrderDetail(OrderMainFileVO orderMainFileVO , List<OrderDetailVO> list) {
 
-			Connection con = null;
-			PreparedStatement pstmt = null;
-			
-			try {
-				con = ds.getConnection();
-				// 1●設定於 pstm.executeUpdate()之前
-	    		con.setAutoCommit(false);
-				
-	    		// 先新增ordermainfile
-				String cols[] = {"1"};
-				pstmt = con.prepareStatement(INSERT_STMT , cols);			
-
-				pstmt.setInt(1, orderMainFileVO.getMemberserialnumber());
-				pstmt.setInt(2, orderMainFileVO.getSellerserialnumber());
-				pstmt.setString(3, orderMainFileVO.getOrderstatusnumber());
-				pstmt.setInt(4, orderMainFileVO.getCouponserialnumber());
-				pstmt.setInt(5, orderMainFileVO.getSellerevaluationstar());
-				pstmt.setInt(6, orderMainFileVO.getMemberevaluationstar());
-				pstmt.setString(7, orderMainFileVO.getSellerevaluationdescription());
-				pstmt.setString(8, orderMainFileVO.getMemberevaluationdescription());
-				pstmt.setInt(9, orderMainFileVO.getOrderamount());
-				pstmt.setDate(10, orderMainFileVO.getOrderdate());
-
-	Statement stmt=	con.createStatement();
-	stmt.executeUpdate("set auto_increment_offset=1;");    //自增主鍵-初始值
-	stmt.executeUpdate("set auto_increment_increment=1;"); //自增主鍵-遞增
-				pstmt.executeUpdate();
-				//掘取對應的自增主鍵值
-				Integer newOrderserialnumber = null;
-				ResultSet rs = pstmt.getGeneratedKeys();
-				if (rs.next()) {
-					newOrderserialnumber = rs.getInt(1);
-					System.out.println("自增主鍵值= " + newOrderserialnumber +"第一筆訂單");
-				} else {
-					System.out.println("未取得自增主鍵值");
-				}
-				rs.close();
-				// 再同時新增orderdetail
-				OrderDetailDAO dao = new OrderDetailDAO();
-				System.out.println("list.size()-A="+list.size());
-				for (OrderDetailVO aOrderDetail : list) {
-					aOrderDetail.setOrderserialnumber(new Integer(newOrderserialnumber)) ;
-					dao.insert2(aOrderDetail,con);
-				}
-
-				// 2●設定於 pstm.executeUpdate()之後
-				con.commit();
-				con.setAutoCommit(true);
-				System.out.println("list.size()-B="+list.size());
-				System.out.println("新增訂單流水編號" + newOrderserialnumber + "時,共有訂單明細" + list.size()
-						+ "筆同時被新增");
-			
-				// Handle any SQL errors
-				} catch (SQLException se) {
-					if (con != null) {
-						try {
-							// 3●設定於當有exception發生時之catch區塊內
-							System.err.print("Transaction is being ");
-							System.err.println("rolled back-由-dept");
-							con.rollback();
-						} catch (SQLException excep) {
-							throw new RuntimeException("rollback error occured. "
-									+ excep.getMessage());
-						}
-					}
-					throw new RuntimeException("A database error occured. "
-							+ se.getMessage());
-					// Clean up JDBC resources
-				} finally {
-					if (pstmt != null) {
-						try {
-							pstmt.close();
-						} catch (SQLException se) {
-							se.printStackTrace(System.err);
-						}
-					}
-					if (con != null) {
-						try {
-							con.close();
-						} catch (Exception e) {
-							e.printStackTrace(System.err);
-						}
-					}
-				}
+		Connection con = null;
+		PreparedStatement pstmt = null;
 		
-		}
+		try {
+			con = ds.getConnection();
+			// 1●設定於 pstm.executeUpdate()之前
+    		con.setAutoCommit(false);
+			
+    		// 先新增ordermainfile
+			String cols[] = {"1"};
+			pstmt = con.prepareStatement(INSERT_STMT , cols);			
+
+			pstmt.setInt(1, orderMainFileVO.getMemberserialnumber());
+			pstmt.setInt(2, orderMainFileVO.getSellerserialnumber());
+			pstmt.setString(3, orderMainFileVO.getOrderstatusnumber());
+			pstmt.setInt(4, orderMainFileVO.getCouponserialnumber());
+			pstmt.setInt(5, orderMainFileVO.getSellerevaluationstar());
+			pstmt.setInt(6, orderMainFileVO.getMemberevaluationstar());
+			pstmt.setString(7, orderMainFileVO.getSellerevaluationdescription());
+			pstmt.setString(8, orderMainFileVO.getMemberevaluationdescription());
+			pstmt.setInt(9, orderMainFileVO.getOrderamount());
+			pstmt.setDate(10, orderMainFileVO.getOrderdate());
+
+			Statement stmt=	con.createStatement();
+			stmt.executeUpdate("set auto_increment_offset=1;");    //自增主鍵-初始值
+			stmt.executeUpdate("set auto_increment_increment=1;"); //自增主鍵-遞增
+			pstmt.executeUpdate();
+			//掘取對應的自增主鍵值
+			Integer newOrderserialnumber = null;
+			ResultSet rs = pstmt.getGeneratedKeys();
+			if (rs.next()) {
+				newOrderserialnumber = rs.getInt(1);
+				System.out.println("自增主鍵值= " + newOrderserialnumber +"第一筆訂單");
+			} else {
+				System.out.println("未取得自增主鍵值");
+			}
+			rs.close();
+			// 再同時新增orderdetail
+			OrderDetailDAO dao = new OrderDetailDAO();
+			System.out.println("list.size()-A="+list.size());
+			for (OrderDetailVO aOrderDetail : list) {
+				aOrderDetail.setOrderserialnumber(new Integer(newOrderserialnumber)) ;
+				dao.insert2(aOrderDetail,con);
+			}
+
+			// 2●設定於 pstm.executeUpdate()之後
+			con.commit();
+			con.setAutoCommit(true);
+			System.out.println("list.size()-B="+list.size());
+			System.out.println("新增訂單流水編號" + newOrderserialnumber + "時,共有訂單明細" + list.size()
+					+ "筆同時被新增");
+		
+			// Handle any SQL errors
+			} catch (SQLException se) {
+				if (con != null) {
+					try {
+						// 3●設定於當有exception發生時之catch區塊內
+						System.err.print("Transaction is being ");
+						System.err.println("rolled back-由-dept");
+						con.rollback();
+					} catch (SQLException excep) {
+						throw new RuntimeException("rollback error occured. "
+								+ excep.getMessage());
+					}
+				}
+				throw new RuntimeException("A database error occured. "
+						+ se.getMessage());
+				// Clean up JDBC resources
+			} finally {
+				if (pstmt != null) {
+					try {
+						pstmt.close();
+					} catch (SQLException se) {
+						se.printStackTrace(System.err);
+					}
+				}
+				if (con != null) {
+					try {
+						con.close();
+					} catch (Exception e) {
+						e.printStackTrace(System.err);
+					}
+				}
+			}
+	
+	}
 		
 	
 	//測試 同時新增訂單主檔及明細
