@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    /> -->
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Css Styles -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!--自然改-->
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <style>
+      /* .header {
+        height: 100px;
+        border: 2px solid red;
+      } */
+      .content {
+        /* height: 600px; */
+        height: 100%;
+        background-image: url(./img/login-1.jpg);
+        background-size: cover;
+      }
+      .let-it-go {
+        margin: 20% 0;
+      }
+      h1,
+      h3 {
+        text-align: center;
+        color: antiquewhite;
+      }
+      .login {
+        background-color: white;
+        height: 440px;
+      }
+      .atag:hover {
+        color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header vic1 Section Begin -->
+    <div w3-include-html="/subject/header.jsp"></div>
+    <!-- Header Section End -->
+    <section class="container-fluid content">
+      <div class="row">
+        <div class="col-6 let-it-go">
+          <h1 style="color: aliceblue">LetItGo</h1>
+          <h3 style="color: aliceblue">樂易購</h3>
+        </div>
+        <div class="col-6 row d-flex justify-content-center align-items-center">
+          <div class="col-8 login p-5 rounded">
+            <!-- <form> -->
+            <h2 class="d-flex justify-content-center mb-3">
+              <span class="font-weight-bolder">會員</span>/<a
+                href="./loginSeller.html"
+                class="atag"
+                >賣家</a
+              >登入
+            </h2>
+
+            <div class="form-group">
+              <label for="account" style="font-size: 16px">帳號</label>
+              <input
+                type="text"
+                name="account"
+                class="form-control"
+                id="account"
+                aria-describedby="emailHelp"
+              />
+              <div class="invalid-feedback">
+                請輸入正確帳號格式(6個字以上，含至少一個英文字母大小寫)
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <label for="password" style="font-size: 16px">密碼</label>
+              <input
+                type="password"
+                name="password"
+                class="form-control"
+                id="password"
+              />
+              <div class="invalid-feedback">
+                請輸入正確密碼格式(6個字以上，含至少一個英文字母大小寫)
+              </div>
+            </div>
+            <div class="form-group form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="agreeCheck"
+                required
+              />
+              <label
+                class="form-check-label text-muted font-weight-light"
+                for="agreeCheck"
+                style="font-size: 16px"
+                >同意使用條款</label
+              >
+            </div>
+
+            <button
+              type="button"
+              id="button"
+              class="btn btn-warning text-white w-100"
+            >
+              Submit
+            </button>
+            <div class="mt-2">
+              <span style="font-size: 16px"
+                ><a
+                  href="./register-member.html"
+                  class="text-decoration-none atag"
+                  >會員註冊</a
+                ></span
+              >
+              <span style="font-size: 16px"
+                ><a
+                  href="./register-seller.html"
+                  class="text-decoration-none atag"
+                  >賣家註冊</a
+                ></span
+              >
+              <span style="font-size: 16px"
+                ><a href="./forget.jsp" class="text-decoration-none atag"
+                  >忘記密碼?</a
+                ></span
+              >
+            </div>
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <h1>Footer</h1> -->
+    <!-- Footer Section Begin -->
+
+    <div w3-include-html="/subject/footer.jsp"></div>
+
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script>
+      window.addEventListener('load', function () {
+        // 抓上面使用者輸入資訊
+        const account = document.querySelector('#account');
+        const password = document.querySelector('#password');
+        const url = 'http://34.80.127.114/subject/member/login';
+        const pattern = /^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$/;
+
+        // let accountCheck = account.value.trim();
+        account.onchange = () => {
+          account.classList.remove('is-invalid');
+
+          if (!pattern.test(account.value.trim())) {
+            account.classList.add('is-invalid');
+          }
+        };
+
+        password.onchange = () => {
+          password.classList.remove('is-invalid');
+
+          if (!pattern.test(password.value.trim())) {
+            password.classList.add('is-invalid');
+          }
+        };
+
+        document.querySelector('#button').addEventListener('click', () => {
+          // if (!account.value || !password.value) {
+          //   return;
+          // }
+          if (!account.value && !password.value) {
+            alert('請填寫帳號!!');
+            alert('請填寫密碼!!');
+            return;
+          }
+          if (!account.value) {
+            alert('請填寫帳號!!');
+            return;
+          }
+          if (!password.value) {
+            alert('請填寫密碼!!');
+            return;
+          }
+
+          
+
+          axios
+            .post(url, {
+              account: account.value.trim(),
+              password: password.value.trim(),
+            })
+            .then((response) => {
+              let msg = response.data.msg;
+              console.log(response.data);
+
+              if (msg === 'success') {
+                let member = response.data.member;
+
+                sessionStorage.setItem(
+                  'memberserialnumber',
+                  member.memberserialnumber
+                );
+
+                alert(`${member.name}歡迎回來~`);
+                //TODO: index header show account
+                window.location.replace('./index.jsp');
+              } else {
+                alert('登入失敗!!請重新輸入正確帳號密碼!!');
+              }
+            })
+            .catch((error) => console.log(error));
+        });
+
+        
+      });
+    </script>
+
+    <script>
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName('*');
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute('w3-include-html');
+          if (file) {
+            /*make an HTTP request using the attribute value as the file name:*/
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+              if (this.readyState == 4) {
+                if (this.status == 200) {
+                  elmnt.innerHTML = this.responseText;
+                }
+                if (this.status == 404) {
+                  elmnt.innerHTML = 'Page not found.';
+                }
+                /*remove the attribute, and call this function once more:*/
+                elmnt.removeAttribute('w3-include-html');
+                includeHTML();
+              }
+            };
+            xhttp.open('GET', file, true);
+            xhttp.send();
+            /*exit the function:*/
+            return;
+          }
+        }
+      }
+
+      includeHTML();
+    </script>
+  </body>
+</html>

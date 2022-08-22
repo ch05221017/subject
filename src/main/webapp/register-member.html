@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register-member</title>
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    /> -->
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/adminlte.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <style>
+      /* .header {
+        height: 100px;
+        border: 2px solid red;
+      } */
+      .content {
+        padding-right: 17%;
+        padding-left: 17%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section Begin -->
+    <header class="header">
+      <!-- Humberger Begin -->
+      <div class="humberger__menu__overlay"></div>
+      <div class="humberger__menu__wrapper">
+        <div class="humberger__menu__logo">
+          <a href="#"
+            ><img src="/subject/src/main/webapp/img/logo.png" alt="" /></a
+          ><!--自然改-->
+        </div>
+        <div class="humberger__menu__cart">
+          <ul>
+            <li>
+              <a href="./my_favorite.jsp"><i class="fa fa-heart"></i> </a>
+            </li>
+            <!--自然改-->
+            <li>
+              <a href="./index.jsp"><i class="fa-solid fa-house"></i> </a>
+            </li>
+            <!--自然改--><!--這個圖示用來做回首頁-->
+            <li>
+              <a href="./shoping-cart.html"
+                ><i class="fa-solid fa-cart-shopping"></i>
+              </a>
+            </li>
+            <!--自然改--><!--這個圖示用來做購物車-->
+            <li>
+              <a href="./listAllTicket.jsp"
+                ><i class="fa-solid fa-ticket"></i
+              ></a>
+            </li>
+            <!--自然改--><!--這個圖示用來做我的票券-->
+            <li>
+              <a href="./logout"><i class="fa-solid fa-person"></i></a>
+            </li>
+            <!--自然改--><!--這個圖示用來做登入-->
+          </ul>
+          <!-- <div class="header__cart__price">item: <span>$150.00</span></div> -->
+        </div>
+        <div class="humberger__menu__widget">
+          <!-- <div class="header__top__right__language">
+                  <img src="img/language.png" alt="">
+                  <div>English</div>
+                  <span class="arrow_carrot-down"></span> -->
+          <!-- <ul>
+                      <li><a href="#">Spanis</a></li>
+                      <li><a href="#">English</a></li>
+                  </ul> -->
+          <!-- </div> -->
+          <!-- <div class="header__top__right__auth">
+                  <a href="#"><i class="fa fa-user"></i> Login</a>
+              </div> -->
+        </div>
+        <nav class="humberger__menu__nav mobile-menu">
+          <ul>
+            <!-- <li class="active"><a href="./index.jsp">Home</a></li>
+                  <li><a href="./shop-grid.html">Shop</a></li> -->
+            <li>
+              <a href="#">會員中心</a>
+              <ul class="header__menu__dropdown">
+                <li>
+                  <a href="./memberupdate/listAllMemberupdate.jsp">帳戶管理</a>
+                </li>
+                <!--自然改-->
+                <li>
+                  <a href="./orderMainFile/OrderMainFile.jsp">訂單查詢</a>
+                </li>
+                <!--自然改-->
+                <li><a href="./MemberBenefits.html">會員權益</a></li>
+                <!--自然改-->
+                <li><a href="./CustomerService.html">聯繫客服</a></li>
+                <!--自然改-->
+                <li><a href="./FAQ.html">買家FAQ</a></li>
+                <!--自然改-->
+              </ul>
+            </li>
+            <li>
+              <a href="#">賣家中心</a>
+              <ul class="header__menu__dropdown">
+                <li><a href="./seller/Order">訂單管理</a></li>
+                <!--自然改-->
+                <li><a href="./seller/product.jsp">商品管理</a></li>
+                <!--自然改-->
+                <li><a href="./seller/Seller">帳戶管理</a></li>
+                <!--自然改-->
+              </ul>
+            </li>
+            <!-- <li><a href="./blog.html">Blog</a></li>
+                  <li><a href="./contact.html">Contact</a></li> -->
+          </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <!-- <div class="header__top__right__social">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+              <a href="#"><i class="fa fa-pinterest-p"></i></a>
+          </div> -->
+        <!-- <div class="humberger__menu__contact">
+              <ul>
+                  <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                  <li>Free Shipping for all Order of $99</li>
+              </ul>
+          </div> -->
+      </div>
+      <!-- Humberger End -->
+
+      <!-- <div class="header__top">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-6 col-md-6">
+                          <div class="header__top__left">
+                              <ul>
+                                  <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                                  <li>Free Shipping for all Order of $99</li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6">
+                          <div class="header__top__right">
+                              <div class="header__top__right__social">
+                                  <a href="#"><i class="fa fa-facebook"></i></a>
+                                  <a href="#"><i class="fa fa-twitter"></i></a>
+                                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                                  <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                              </div>
+                              <div class="header__top__right__language">
+                                  <img src="img/language.png" alt="">
+                                  <div>English</div>
+                                  <span class="arrow_carrot-down"></span>
+                                  <ul>
+                                      <li><a href="#">Spanis</a></li>
+                                      <li><a href="#">English</a></li>
+                                  </ul>
+                              </div>
+                              <div class="header__top__right__auth">
+                                  <a href="#"><i class="fa fa-user"></i> Login</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div> -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="header__logo">
+              <a href="./index.jsp"><img src="./img/Frame 6.svg" alt="" /></a
+              ><!--自然改-->
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <nav class="header__menu">
+              <ul>
+                <li>
+                  <a href="#">會員中心</a>
+                  <ul class="header__menu__dropdown">
+                    <li>
+                      <a href="./memberupdate/listAllMemberupdate.jsp"
+                        >帳戶管理</a
+                      >
+                    </li>
+                    <!--自然改-->
+                    <li>
+                      <a href="./orderMainFile/OrderMainFile.jsp">訂單查詢</a>
+                    </li>
+                    <!--自然改-->
+                    <li><a href="./MemberBenefits.html">會員權益</a></li>
+                    <!--自然改-->
+                    <li><a href="./CustomerService.html">聯繫客服</a></li>
+                    <!--自然改-->
+                    <li><a href="./FAQ.html">買家FAQ</a></li>
+                    <!--自然改-->
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">賣家中心</a>
+                  <ul class="header__menu__dropdown">
+                    <li><a href="./seller/Order">訂單管理</a></li>
+                    <!--自然改-->
+                    <li><a href="./seller/product.jsp">商品管理</a></li>
+                    <!--自然改-->
+                    <li><a href="./seller/Seller">帳戶管理</a></li>
+                    <!--自然改-->
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-3">
+            <div class="header__cart">
+              <ul>
+                <li>
+                  <a href="./my_favorite.jsp"><i class="fa fa-heart"></i> </a>
+                </li>
+                <!--自然改-->
+                <li>
+                  <a href="./index.jsp"><i class="fa-solid fa-house"></i> </a>
+                </li>
+                <!--自然改--><!--這個圖示用來做回首頁-->
+                <li>
+                  <a href="./shoping-cart.html"
+                    ><i class="fa-solid fa-cart-shopping"></i>
+                  </a>
+                </li>
+                <!--自然改--><!--這個圖示用來做購物車-->
+                <li>
+                  <a href="./ticket/listAllTicket.jsp"
+                    ><i class="fa-solid fa-ticket"></i
+                  ></a>
+                </li>
+                <!--自然改--><!--這個圖示用來做我的票券-->
+                <li>
+                  <a href="./login.html"><i class="fa-solid fa-person"></i></a>
+                </li>
+                <!--自然改--><!--這個圖示用來做登入-->
+                <li>
+                  <a href="./logout"><i class="fa fa-sign-out"></i></a>
+                </li>
+                <!--自然改--><!--這個圖示用來做登入-->
+              </ul>
+              <!-- <div class="header__cart__price">item: <span>$150.00</span></div> -->
+            </div>
+          </div>
+        </div>
+        <div class="humberger__open">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <!-- Header Section End -->
+
+    <section class="container mt-4 mb-5 content">
+      <h1 class="d-flex justify-content-center mb-5">會員註冊</h1>
+      <div id="errmsg" class="d-flex justify-content-center text-danger"></div>
+      <!-- <form> -->
+      <div class="form-row">
+        <div class="form-group col-6">
+          <label for="account">帳號</label>
+          <input
+            type="text"
+            name="account"
+            class="form-control"
+            id="account"
+            aria-describedby="emailHelp"
+          />
+          <small id="check-pattern" style="display: none; color: red">
+            請輸入正確帳號格式(6個字以上，含至少一個英文字母大小寫)
+          </small>
+
+          <div class="invalid-feedback">帳號已被使用，請重新輸入</div>
+        </div>
+        <div class="form-group col-6">
+          <label for="password">密碼</label>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            id="password"
+          />
+          <div class="invalid-feedback">
+            請輸入正確密碼格式(6個字以上，含至少一個英文字母大小寫)
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <!-- <div class="col-md-6 mb-3">
+            <label for="validationServer01">姓</label>
+            <input
+              type="text"
+              class="form-control"
+              id="validationServer01"
+              value="吳"
+              required
+            />
+          </div>
+          <div class="col-md-6 mb-3">
+            
+          </div> -->
+        <label for="name">姓名</label>
+        <input type="text" class="form-control" id="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="birthday">生日</label>
+        <div
+          class="input-group date"
+          id="reservationdate"
+          data-target-input="nearest"
+        >
+          <input
+            type="date"
+            id="birthday"
+            class="form-control datetimepicker-input"
+            data-target="#reservationdate"
+            value="06/28/1990"
+          />
+          <div
+            class="input-group-append"
+            data-target="#reservationdate"
+            data-toggle="datetimepicker"
+          >
+            <!-- <div class="input-group-text">
+                <i class="fa fa-calendar"></i>
+              </div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          aria-describedby="emailHelp"
+        />
+        <!-- <small id="emailHelp" class="form-text text-muted"
+          >We'll never share your email with anyone else.</small
+        > -->
+        <div class="invalid-feedback">請輸入正確e-mail格式</div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" class="form-control" id="phone" />
+        <div class="invalid-feedback">請輸入正確手機號碼格式</div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-12 mb-3">
+          <label for="address">地址</label>
+          <input type="text" class="form-control" id="address" />
+          <div class="invalid-feedback">請輸入地址</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input
+            class="form-check-input is-invalid"
+            type="checkbox"
+            value=""
+            id="invalidCheck3"
+            required
+          />
+          <label class="form-check-label" for="invalidCheck3">
+            Agree to terms and conditions
+          </label>
+          <div class="invalid-feedback">You must agree before submitting.</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="btn" type="button">Submit</button>
+      <!-- </form> -->
+    </section>
+
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer__about">
+              <div class="footer__about__logo">
+                <a href="./index.jsp"><img src="./img/Frame 6.svg" alt="" /></a>
+              </div>
+              <ul>
+                <li>地址：100 台北市中正區濟南路一段321號</li>
+                <!--自然改-->
+                <li>電話：02-12345678</li>
+                <!--自然改-->
+                <li>Email: caldonic@gmail.com</li>
+                <!--自然改-->
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+            <div class="footer__widget">
+              <h6>相關連結</h6>
+              <ul class="header__menu__dropdown">
+                <li>
+                  <a href="./memberupdate/listAllMemberupdate.jsp">帳戶管理</a>
+                </li>
+                <!--自然改-->
+                <li>
+                  <a href="./orderMainFile/OrderMainFile.jsp">訂單查詢</a>
+                </li>
+                <!--自然改-->
+                <li><a href="./MemberBenefits.html">會員權益</a></li>
+                <!--自然改-->
+                <li><a href="./CustomerService.html">聯繫客服</a></li>
+                <!--自然改-->
+                <li><a href="./FAQ.html">買家FAQ</a></li>
+                <!--自然改-->
+              </ul>
+              <ul class="header__menu__dropdown">
+                <li><a href="./seller/Order">訂單管理</a></li>
+                <!--自然改-->
+                <li><a href="./seller/product.jsp">商品管理</a></li>
+                <!--自然改-->
+                <li><a href="./seller/Seller">帳戶管理</a></li>
+                <!--自然改-->
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12">
+            <div class="footer__widget">
+              <!-- <h6>Join Our Newsletter Now</h6>
+                      <p>Get E-mail updates about our latest shop and special offers.</p>
+                      <form action="#">
+                          <input type="text" placeholder="Enter your mail">
+                          <button type="submit" class="site-btn">Subscribe</button>
+                      </form> -->
+              <!--                         <div class="footer__widget__social"> -->
+              <!--                             <a href="#"><i class="fa fa-facebook"></i></a> -->
+              <!--                             <a href="#"><i class="fa fa-instagram"></i></a> -->
+              <!--                             <a href="#"><i class="fa-solid fa-envelope"></i></a> -->
+              <!--                         </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="footer__copyright">
+              <div class="footer__copyright__text">
+                <p>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  版權所有 copyright © 2022 TEAM LETITGO All Rights Reserved.
+                  <!--自然改-->
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+              </div>
+              <!-- <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/adminlte.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/axios.min.js"></script>
+
+    <script>
+      // 抓上面使用者輸入資訊
+      const account = document.querySelector('#account');
+      const password = document.querySelector('#password');
+      // const name = document.querySelector('#name');
+      const birthday = document.querySelector('#birthday');
+      const email = document.querySelector('#email');
+      const phone = document.querySelector('#phone');
+      const address = document.querySelector('#address');
+      const url = 'http://34.80.127.114/subject/member/register';
+      const urlCheck = `http://34.80.127.114/subject/member/checkAccount?account=`;
+      const pattern = /^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$/;
+      const patternEmail =
+        /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$/;
+      const patternPhone = /^(09)\d{8}$/;
+      window.addEventListener('load', function () {
+        const name = document.querySelector('#name');
+        account.onchange = () => {
+          const acct = document.querySelector('#account')?.value?.trim();
+          const isValid = pattern.test(acct);
+          if (isValid) {
+            document.getElementById('check-pattern').style.display = 'none';
+          } else {
+            document.getElementById('check-pattern').style.display = '';
+            return;
+          }
+
+          axios.get(urlCheck + acct).then((response) => {
+            let msg = response?.data?.msg; //避免所有階段空值造成的錯誤
+            if (msg === 'success') {
+              account.classList.add('is-invalid');
+            } else {
+              account.classList.remove('is-invalid');
+            }
+          });
+        };
+
+        password.onchange = () => {
+          password.classList.remove('is-invalid');
+
+          if (!pattern.test(password.value.trim())) {
+            password.classList.add('is-invalid');
+          }
+        };
+
+        email.onchange = () => {
+          email.classList.remove('is-invalid');
+
+          if (!patternEmail.test(email.value.trim())) {
+            email.classList.add('is-invalid');
+          }
+        };
+
+        phone.onchange = () => {
+          phone.classList.remove('is-invalid');
+
+          if (!patternPhone.test(phone.value.trim())) {
+            phone.classList.add('is-invalid');
+          }
+        };
+
+        function checkNull() {
+          let checkName = document.getElementById('name');
+          if (!account.value) {
+            var accountCheck = '帳號';
+          } else {
+            var accountCheck = '';
+          }
+          if (!password.value) {
+            var passwordCheck = '密碼';
+          } else {
+            var passwordCheck = '';
+          }
+          if (!checkName.value) {
+            var nameCheck = '姓名';
+          } else {
+            var nameCheck = '';
+          }
+          if (!birthday.value) {
+            var birthdayCheck = '生日';
+          } else {
+            var birthdayCheck = '';
+          }
+          if (!email.value) {
+            var emailCheck = 'email';
+          } else {
+            var emailCheck = '';
+          }
+          if (!phone.value) {
+            var phoneCheck = '電話';
+          } else {
+            var phoneCheck = '';
+          }
+          if (!address.value) {
+            var addressCheck = '地址';
+          } else {
+            var addressCheck = '';
+          }
+          // console.log(nameCheck);
+          let checked = [
+            accountCheck,
+            passwordCheck,
+            nameCheck,
+            birthdayCheck,
+            emailCheck,
+            phoneCheck,
+            addressCheck,
+          ];
+          return checked;
+        }
+
+        document.querySelector('#btn').addEventListener('click', () => {
+          if (
+            !account.value ||
+            !password.value ||
+            !name.value ||
+            !birthday.value ||
+            !email.value ||
+            !phone.value ||
+            !address.value
+          ) {
+            let msg = '';
+            let array = checkNull();
+            array.forEach((element) => {
+              msg += element + ' ';
+            });
+            // console.log(`${msg}請勿空白`);
+            alert(`${msg}請勿空白`);
+            document.getElementById('errmsg').innerHTML = '請填寫: ' + msg;
+            return;
+          }
+
+          axios
+            .post(url, {
+              account: account.value.trim(),
+              password: password.value.trim(),
+              name: name.value.trim(),
+              birthday: birthday.value.trim(),
+              email: email.value.trim(),
+              phone: phone.value.trim(),
+              address: address.value.trim(),
+            })
+            .then((response) => {
+              let msg = response.data.msg;
+              //console.log(response.data);
+              if (msg === 'success') {
+                // let member = response.data['member'];
+
+                // let member = null;
+                // sessionStorage.setItem(
+                //   'memberserialnumber',
+                //   member['memberserialnumber']
+                // );
+
+                // var a = 0 || 1;
+
+                // member = response?.data?.member;
+
+                alert(`註冊成功~`);
+
+                window.location.replace('./index.jsp');
+              } else {
+                alert('註冊失敗!!請重新輸入正確資料!!');
+              }
+            })
+            .catch((error) => console.log(error));
+        });
+      });
+    </script>
+  </body>
+</html>
