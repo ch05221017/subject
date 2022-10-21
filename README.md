@@ -1,4 +1,3 @@
-# TGA102-G3-LetItGo
 LetItGo 樂易購
 <br>
 電子優惠券銷售平台
